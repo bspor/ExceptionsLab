@@ -31,7 +31,7 @@ public class Challenge1 {
         String[] nameParts = fullName.split(" ");
             //Create a local variable to determine the last index of tthe array
             int arraySize = nameParts.length-1;
-                    System.out.println(arraySize);
+        //Check for Null and 0 length input 
         if (fullName == null || fullName.length() == 0) {
             throw new IllegalArgumentException("Entry Required.");
         //Here I assume that if a comma is used, the user input Fname then LName
@@ -39,7 +39,6 @@ public class Challenge1 {
              return nameParts[0];
         //Defaults to the last word in the String as the last name
         }else{
-            
             return nameParts[arraySize];
         }
     }

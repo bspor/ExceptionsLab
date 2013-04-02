@@ -8,8 +8,8 @@ package lab2;
  * @version 1.00
  */
 public class NameService {
-    private static final int FIRST_NAME_IDX = 0;
-    private static final int LAST_NAME_IDX = 1;
+//    private static final int FIRST_NAME_IDX = 0;
+//    private static final int LAST_NAME_IDX = 1;
     
     /**
      * Finds and returns the last name from within a full name. Caution: 
@@ -20,7 +20,22 @@ public class NameService {
      */
     public String extractLastName(String fullName) {
         String[] nameParts = fullName.split(" ");
-        return nameParts[LAST_NAME_IDX];
+         //Create a local variable to determine the last index of tthe array
+           int arraySize = nameParts.length-1;
+        //Check for Null and 0 length input 
+        if (fullName == null || fullName.length() == 0) {
+            System.out.println("how");
+            throw new IllegalArgumentException("Entry Required.");
+        //Here I assume that if a comma is used, the user input Fname then LName
+        } else if (fullName.contains(",")) {
+            System.out.println("huh");
+             return nameParts[0];
+        //Defaults to the last word in the String as the last name
+        }else{
+            System.out.println("whatinthe");
+            System.out.println(arraySize);
+            return nameParts[arraySize];
+        }
     }
     
     /**
@@ -31,8 +46,7 @@ public class NameService {
      * @return the first name
      */
     public String extractFirstName(String fullName) {
-        String[] nameParts = fullName.split(" ");
-        return nameParts[FIRST_NAME_IDX];
+       return "Silly";
     }
 
     /**
