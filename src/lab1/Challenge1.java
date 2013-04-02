@@ -15,7 +15,8 @@ import javax.swing.JOptionPane;
  * @version 1.00
  */
 public class Challenge1 {
-    private static final int LAST_NAME_IDX = 1;
+    //private static final int LAST_NAME_IDX = 1; got rid of this constant
+    // as you dont know how many names a person may have.
 
     public static void main(String[] args) {
         Challenge1 app = new Challenge1();
@@ -28,7 +29,18 @@ public class Challenge1 {
     
     public String extractLastName(String fullName) {
         String[] nameParts = fullName.split(" ");
-        return nameParts[LAST_NAME_IDX];
+            //Create a local variable to determine the last index of tthe array
+            int arraySize = nameParts.length-1;
+                    System.out.println(arraySize);
+        if (fullName == null || fullName.length() == 0) {
+            throw new IllegalArgumentException("Entry Required.");
+        //Here I assume that if a comma is used, the user input Fname then LName
+        } else if (fullName.contains(",")) {
+             return nameParts[0];
+        //Defaults to the last word in the String as the last name
+        }else{
+            
+            return nameParts[arraySize];
+        }
     }
-
 }
