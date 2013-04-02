@@ -24,15 +24,12 @@ public class NameService {
            int arraySize = nameParts.length-1;
         //Check for Null and 0 length input 
         if (fullName == null || fullName.length() == 0) {
-            System.out.println("how");
             throw new IllegalArgumentException("Entry Required.");
         //Here I assume that if a comma is used, the user input Fname then LName
         } else if (fullName.contains(",")) {
-            System.out.println("huh");
              return nameParts[0];
         //Defaults to the last word in the String as the last name
         }else{
-            System.out.println("whatinthe");
             System.out.println(arraySize);
             return nameParts[arraySize];
         }
@@ -46,7 +43,7 @@ public class NameService {
      * @return the first name
      */
     public String extractFirstName(String fullName) {
-       return "Silly";
+       return "This method is not called";
     }
 
     /**
