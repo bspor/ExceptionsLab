@@ -18,10 +18,18 @@ public class NameService {
      * @param fullName - a name containing a first name and a last name
      * @return the last name
      */
-    public String extractLastName(String fullName) throws InvalidNameException {
+    public boolean extractLastName(String fullName) throws InvalidNameException {
          String[] nameParts = fullName.split(" ");
          //Create a local variable to determine the last index of tthe array
            int arraySize = nameParts.length-1;
+           
+          public boolean containsNum(String name) {
+               boolean isNum = true;
+                for(char c : name.toCharArray()) {
+                // process c
+                }
+                return true;
+           }
         //Check for Null and 0 length input 
         if (fullName == null || fullName.length() == 0) {
             throw new InvalidNameException();
